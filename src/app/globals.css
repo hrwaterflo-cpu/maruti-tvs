@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 48%, #ebf3ff 100%);
+    color: #0b2265;
+    font-family: 'Plus Jakarta Sans', var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* TVS Signature Racing Top Accent */
+.tvs-racing-bar {
+  background: linear-gradient(90deg, #0b2265 0%, #2563eb 45%, #93c5fd 50%, #e31e24 55%, #b91c1c 100%);
+}
+
+/* Light White & Blue Glassmorphism Surfaces */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 10px 30px -10px rgba(11, 34, 101, 0.09),
+    0 1px 2px rgba(11, 34, 101, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(191, 219, 254, 0.65);
+  box-shadow: 0 16px 40px -14px rgba(29, 78, 216, 0.12);
+}
+
+.tvs-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.055) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.tvs-dot-light {
+  background-image: radial-gradient(rgba(29, 78, 216, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.05);
+  }
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blueShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 9s ease-in-out 2s infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.text-tvs-blue-gradient {
+  background: linear-gradient(110deg, #0b2265 0%, #1d4ed8 42%, #0284c7 68%, #0b2265 100%);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: blueShimmer 7s ease infinite;
+}
