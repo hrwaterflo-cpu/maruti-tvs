@@ -413,50 +413,50 @@ export default function AdminPage() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#06133A]">
+      <div className="min-h-screen flex items-center justify-center bg-[#090E1A]">
         <Loader2 className="h-7 w-7 animate-spin text-white" />
       </div>
     );
   }
 
-  // LIGHT WHITE & BLUE GLASSMORPHISM LOGIN SCREEN (NO DEMO CREDENTIALS SHOWN)
+  // LUXURY MINIMAL LIGHT LOGIN SCREEN (NO DEMO CREDENTIALS SHOWN)
   if (!session) {
     return (
-      <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#F4F8FF] via-white to-[#EBF3FF] tvs-grid-light p-4 overflow-hidden">
-        <div className="fixed top-0 left-0 right-0 h-[3px] tvs-racing-bar z-20" />
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-blue-400/25 blur-3xl animate-float-slow" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-sky-300/30 blur-3xl animate-float-delayed" />
+      <div className="relative min-h-screen flex flex-col items-center justify-center bg-[#FBFBFC] p-4 overflow-hidden">
+        <div className="fixed top-0 left-0 right-0 h-[2px] tvs-racing-bar z-20" />
+        <div className="pointer-events-none absolute -top-40 -left-40 h-[450px] w-[450px] rounded-full bg-slate-200/40 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -right-40 h-[450px] w-[450px] rounded-full bg-red-100/30 blur-3xl" />
 
         <Link
           href="/"
-          className="relative mb-6 inline-flex items-center gap-1.5 rounded-full glass-card px-4 py-1.5 text-xs font-bold text-[#0B2265] hover:bg-white transition-colors"
+          className="relative mb-6 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/90 px-4 py-1.5 text-xs font-semibold text-[#090E1A] hover:bg-slate-50 shadow-xs transition-colors"
         >
-          <ArrowLeft className="h-3.5 w-3.5 text-[#1D4ED8]" />
+          <ArrowLeft className="h-3.5 w-3.5 text-slate-600" />
           Back to Maruti TVS
         </Link>
 
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.96 }}
+          initial={{ opacity: 0, y: 16, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className="relative w-full max-w-sm rounded-3xl glass-panel p-7"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="relative w-full max-w-sm rounded-3xl border border-slate-200/90 bg-white p-7 shadow-xl shadow-slate-900/5"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="relative flex h-11 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0B2265] to-[#1D4ED8] text-white font-black italic text-sm shadow-md shadow-blue-600/20 overflow-hidden">
+            <div className="relative flex h-11 w-12 items-center justify-center rounded-2xl bg-[#090E1A] text-white font-black italic text-sm shadow-md overflow-hidden">
               TVS
-              <span className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#E31E24]" />
+              <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#E31E24]" />
             </div>
             <div>
-              <h1 className="text-lg font-extrabold tracking-tight text-[#0B2265]">
+              <h1 className="text-lg font-black tracking-tight text-[#090E1A]">
                 MARUTI <span className="text-[#E31E24] italic">TVS</span>
               </h1>
-              <p className="text-xs text-slate-500">Dealer Inventory Sign In</p>
+              <p className="text-xs text-slate-500 font-medium">Dealer Inventory Sign In</p>
             </div>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#0B2265] mb-1.5">
+              <label className="block text-xs font-bold text-[#090E1A] mb-1.5">
                 Admin ID
               </label>
               <input
@@ -466,12 +466,12 @@ export default function AdminPage() {
                 value={adminId}
                 onChange={(e) => setAdminId(e.target.value)}
                 placeholder="Enter Admin ID"
-                className="w-full rounded-xl border border-blue-200/80 bg-white/80 px-3.5 py-3 text-sm font-medium text-[#0B2265] placeholder:text-slate-400 outline-none focus:bg-white focus:border-[#1D4ED8] focus:ring-4 focus:ring-blue-500/15 transition-all"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-3 text-sm font-medium text-[#090E1A] placeholder:text-slate-400 outline-none focus:bg-white focus:border-[#090E1A] focus:ring-4 focus:ring-slate-900/5 transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#0B2265] mb-1.5">
+              <label className="block text-xs font-bold text-[#090E1A] mb-1.5">
                 Password
               </label>
               <input
@@ -481,7 +481,7 @@ export default function AdminPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
-                className="w-full rounded-xl border border-blue-200/80 bg-white/80 px-3.5 py-3 text-sm font-medium text-[#0B2265] placeholder:text-slate-400 outline-none focus:bg-white focus:border-[#1D4ED8] focus:ring-4 focus:ring-blue-500/15 transition-all"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-3 text-sm font-medium text-[#090E1A] placeholder:text-slate-400 outline-none focus:bg-white focus:border-[#090E1A] focus:ring-4 focus:ring-slate-900/5 transition-all"
               />
             </div>
 
@@ -500,12 +500,12 @@ export default function AdminPage() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loggingIn}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0B2265] to-[#1D4ED8] py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/25 hover:brightness-110 disabled:opacity-60 transition-all"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#090E1A] py-3 text-sm font-bold text-white shadow-md shadow-slate-900/10 hover:bg-black disabled:opacity-60 transition-all"
             >
               {loggingIn ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <Lock className="h-4 w-4 text-sky-300" />
+                <Lock className="h-4 w-4 text-slate-300" />
               )}
               {loggingIn ? "Signing In..." : "Sign In"}
             </motion.button>
@@ -515,22 +515,22 @@ export default function AdminPage() {
     );
   }
 
-  // AUTHENTICATED LIGHT WHITE & BLUE GLASSMORPHISM ADMIN CONSOLE (NO MRP)
+  // AUTHENTICATED LUXURY MINIMAL LIGHT ADMIN CONSOLE (NO MRP)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F4F8FF] via-white to-[#EBF3FF] flex flex-col">
-      <header className="sticky top-0 z-30 border-b border-blue-100/80 bg-white/75 backdrop-blur-2xl text-[#0B2265]">
-        <div className="h-[3px] w-full tvs-racing-bar" />
+    <div className="min-h-screen bg-[#FBFBFC] text-[#090E1A] flex flex-col">
+      <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl text-[#090E1A]">
+        <div className="h-[2px] w-full tvs-racing-bar" />
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <div className="flex items-center gap-2.5">
-            <div className="relative flex h-9 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#0B2265] to-[#1D4ED8] text-white font-black italic text-xs overflow-hidden shadow-md shadow-blue-600/20">
+            <div className="relative flex h-9 w-10 items-center justify-center rounded-xl bg-[#090E1A] text-white font-black italic text-xs overflow-hidden shadow-xs">
               TVS
               <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#E31E24]" />
             </div>
             <div className="leading-tight">
-              <h1 className="text-sm sm:text-base font-extrabold tracking-tight text-[#0B2265]">
+              <h1 className="text-sm sm:text-base font-black tracking-tight text-[#090E1A]">
                 MARUTI <span className="text-[#E31E24] italic">TVS</span> Admin
               </h1>
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[11px] text-slate-500 font-medium">
                 {selectedModel ? selectedModel : `${models.length} TVS Models`}
               </p>
             </div>
@@ -539,15 +539,15 @@ export default function AdminPage() {
           <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="hidden sm:inline-flex items-center gap-1 rounded-xl border border-blue-100 bg-white/80 px-3 py-2 text-xs font-semibold text-[#0B2265] hover:bg-blue-50"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-[#090E1A] hover:bg-slate-50 shadow-2xs"
             >
-              <ArrowLeft className="h-3.5 w-3.5 text-[#1D4ED8]" />
+              <ArrowLeft className="h-3.5 w-3.5 text-slate-600" />
               Website
             </Link>
             <motion.button
               whileTap={{ scale: 0.92 }}
               onClick={handleRefresh}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-blue-100 bg-white/80 text-[#0B2265] hover:bg-blue-50"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#090E1A] hover:bg-slate-50 shadow-2xs"
               title="Refresh stock"
             >
               <RefreshCw className={`h-4 w-4 ${loadingModels || loadingParts ? "animate-spin" : ""}`} />
@@ -555,19 +555,19 @@ export default function AdminPage() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#0B2265] to-[#1D4ED8] px-3 py-2 text-xs font-bold text-white shadow-sm hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#090E1A] px-3.5 py-2 text-xs font-bold text-white shadow-xs hover:bg-black transition-all"
             >
-              <LogOut className="h-3.5 w-3.5 text-sky-300" />
+              <LogOut className="h-3.5 w-3.5 text-slate-300" />
               <span className="hidden sm:inline">Logout</span>
             </motion.button>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 space-y-5">
+      <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 space-y-6">
         {/* Sliding Tab Switcher + Add Part Button */}
         <div className="flex items-center justify-between gap-3">
-          <div className="inline-flex rounded-2xl border border-blue-100 bg-white p-1 shadow-2xs">
+          <div className="inline-flex rounded-2xl border border-slate-200 bg-slate-100/70 p-1 shadow-2xs">
             {(["inventory", "enquiries"] as const).map((tab) => {
               const isActive = activeTab === tab;
               return (
@@ -575,14 +575,14 @@ export default function AdminPage() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`relative inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-bold transition-colors ${
-                    isActive ? "text-white" : "text-slate-600 hover:text-[#0B2265]"
+                    isActive ? "text-white" : "text-slate-600 hover:text-[#090E1A]"
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="adminActiveTab"
                       transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                      className="absolute inset-0 rounded-xl bg-[#0B2265]"
+                      className="absolute inset-0 rounded-xl bg-[#090E1A]"
                     />
                   )}
                   <span className="relative z-10 inline-flex items-center gap-1.5">
@@ -610,10 +610,10 @@ export default function AdminPage() {
 
           {activeTab === "inventory" && selectedModel && (
             <motion.button
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => openAddModal(selectedModel)}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#E31E24] px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-red-900/20 hover:bg-red-600 transition-all"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#E31E24] px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-red-600 transition-all"
             >
               <Plus className="h-4 w-4" />
               Add Part
@@ -631,64 +631,64 @@ export default function AdminPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
-                className="space-y-5"
+                className="space-y-6"
               >
                 {/* Global KPI Cards */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="rounded-2xl border border-blue-100 bg-white p-4 shadow-2xs">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+                  <div className="rounded-2xl border border-slate-200/90 bg-white p-4.5 shadow-xs">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                       Total Parts
                     </p>
-                    <p className="mt-1 text-2xl font-extrabold text-[#0B2265]">
+                    <p className="mt-1 text-2xl font-black text-[#090E1A]">
                       {globalStats.total.toLocaleString("en-IN")}
                     </p>
-                    <p className="text-[11px] text-slate-500">
+                    <p className="text-[11px] text-slate-500 font-medium">
                       Across {models.length} TVS models
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/40 p-4 shadow-2xs">
+                  <div className="rounded-2xl border border-emerald-200/70 bg-emerald-50/30 p-4.5 shadow-xs">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">
                       In Stock
                     </p>
-                    <p className="mt-1 text-2xl font-extrabold text-emerald-700">
+                    <p className="mt-1 text-2xl font-black text-emerald-700">
                       {globalStats.inStock.toLocaleString("en-IN")}
                     </p>
-                    <p className="text-[11px] text-emerald-600">Healthy</p>
+                    <p className="text-[11px] text-emerald-600 font-medium">Healthy inventory</p>
                   </div>
-                  <div className="rounded-2xl border border-amber-200/80 bg-amber-50/40 p-4 shadow-2xs">
+                  <div className="rounded-2xl border border-amber-200/70 bg-amber-50/30 p-4.5 shadow-xs">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-amber-700">
                       Low Stock
                     </p>
-                    <p className="mt-1 text-2xl font-extrabold text-amber-600">
+                    <p className="mt-1 text-2xl font-black text-amber-600">
                       {globalStats.lowStock.toLocaleString("en-IN")}
                     </p>
-                    <p className="text-[11px] text-amber-600">Reorder soon</p>
+                    <p className="text-[11px] text-amber-600 font-medium">Reorder soon</p>
                   </div>
-                  <div className="rounded-2xl border border-red-200/80 bg-red-50/40 p-4 shadow-2xs">
+                  <div className="rounded-2xl border border-red-200/70 bg-red-50/30 p-4.5 shadow-xs">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-[#E31E24]">
                       Out of Stock
                     </p>
-                    <p className="mt-1 text-2xl font-extrabold text-[#E31E24]">
+                    <p className="mt-1 text-2xl font-black text-[#E31E24]">
                       {globalStats.outOfStock.toLocaleString("en-IN")}
                     </p>
-                    <p className="text-[11px] text-red-600">Urgent</p>
+                    <p className="text-[11px] text-red-600 font-medium">Immediate restock</p>
                   </div>
                 </div>
 
-                {/* Model Selection Cards (NO search bar shown yet!) */}
+                {/* Model Selection Cards */}
                 <div>
-                  <div className="mb-3.5">
-                    <h2 className="text-lg sm:text-xl font-extrabold tracking-tight text-[#0B2265]">
+                  <div className="mb-4">
+                    <h2 className="text-lg sm:text-xl font-black tracking-tight text-[#090E1A]">
                       Select TVS Model to Check Stock
                     </h2>
-                    <p className="text-xs text-slate-500">
-                      Tap any TVS model below to open its spare parts stock &amp; search.
+                    <p className="text-xs text-slate-500 font-medium">
+                      Tap any TVS model below to inspect assembly categories and live stock.
                     </p>
                   </div>
 
                   {loadingModels && models.length === 0 ? (
-                    <div className="rounded-2xl border border-blue-100 bg-white py-14 text-center text-slate-500">
-                      <Loader2 className="mx-auto h-6 w-6 animate-spin text-[#0B2265] mb-2" />
+                    <div className="rounded-2xl border border-slate-200 bg-white py-14 text-center text-slate-500">
+                      <Loader2 className="mx-auto h-6 w-6 animate-spin text-[#090E1A] mb-2" />
                       <p className="text-xs font-medium">Loading TVS models from Supabase...</p>
                     </div>
                   ) : (
@@ -698,12 +698,12 @@ export default function AdminPage() {
                         return (
                           <motion.button
                             key={m.vehicle_model}
-                            whileHover={{ y: -4 }}
+                            whileHover={{ y: -3 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => loadModelParts(m.vehicle_model)}
-                            className="group text-left flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xs hover:border-[#0B2265] hover:shadow-xl hover:shadow-blue-950/10 transition-all duration-300"
+                            className="group text-left flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xs hover:border-[#090E1A] hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300"
                           >
-                            <div className="h-1 w-full bg-slate-100 group-hover:bg-[#E31E24] transition-colors" />
+                            <div className="h-0.5 w-full bg-slate-100 group-hover:bg-[#E31E24] transition-colors" />
                             <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
                               <img
                                 src={meta.image}
@@ -712,7 +712,7 @@ export default function AdminPage() {
                                 decoding="async"
                                 className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                               />
-                              <span className="absolute right-2.5 top-2.5 rounded-full bg-[#0B2265]/90 px-2.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-md">
+                              <span className="absolute right-2.5 top-2.5 rounded-full bg-[#090E1A]/90 px-2.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-md">
                                 {m.total_parts} Parts
                               </span>
                             </div>
@@ -722,7 +722,7 @@ export default function AdminPage() {
                                 <p className="text-[10px] font-bold uppercase tracking-wider text-[#E31E24]">
                                   {meta.category}
                                 </p>
-                                <h3 className="mt-0.5 text-base font-extrabold text-[#0B2265]">
+                                <h3 className="mt-0.5 text-base font-black text-[#090E1A]">
                                   {m.vehicle_model}
                                 </h3>
 
@@ -743,9 +743,9 @@ export default function AdminPage() {
                                 </div>
                               </div>
 
-                              <div className="mt-3.5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0B2265]">
+                              <div className="mt-3.5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#090E1A]">
                                 <span>Open Stock</span>
-                                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-[#0B2265] group-hover:bg-[#E31E24] group-hover:text-white transition-colors">
+                                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[#090E1A] group-hover:bg-[#090E1A] group-hover:text-white transition-colors">
                                   <ChevronRight className="h-4 w-4" />
                                 </span>
                               </div>
@@ -768,7 +768,7 @@ export default function AdminPage() {
                 className="space-y-4"
               >
                 {/* Back to Models Header */}
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-blue-100 bg-white p-3.5 sm:p-4 shadow-2xs">
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200/90 bg-white p-3.5 sm:p-4 shadow-xs">
                   <div className="flex items-center gap-3">
                     <motion.button
                       whileHover={{ x: -2 }}
@@ -780,16 +780,16 @@ export default function AdminPage() {
                         setAssemblyFilter("ALL");
                         setStatusFilter("ALL");
                       }}
-                      className="inline-flex items-center gap-1.5 rounded-xl border border-blue-200 bg-blue-50/70 px-3 py-2 text-xs font-bold text-[#0B2265] hover:bg-blue-100"
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-100/70 px-3 py-2 text-xs font-bold text-[#090E1A] hover:bg-slate-200/70"
                     >
                       <ArrowLeft className="h-3.5 w-3.5" />
                       All Models
                     </motion.button>
                     <div>
-                      <h2 className="text-base sm:text-lg font-extrabold text-[#0B2265] leading-tight">
+                      <h2 className="text-base sm:text-lg font-black text-[#090E1A] leading-tight">
                         {selectedModel}
                       </h2>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-[11px] text-slate-500 font-medium">
                         {modelStats.total} parts &bull; {modelStats.totalUnits} total units in stock
                       </p>
                     </div>
@@ -798,7 +798,7 @@ export default function AdminPage() {
                   <motion.button
                     whileTap={{ scale: 0.96 }}
                     onClick={exportReorderCSV}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-blue-200 bg-white px-3.5 py-2 text-xs font-bold text-[#0B2265] hover:bg-blue-50 transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-[#090E1A] hover:bg-slate-50 transition-colors shadow-2xs"
                   >
                     <Download className="h-3.5 w-3.5" />
                     Reorder CSV ({modelStats.lowStock + modelStats.outOfStock})
@@ -808,10 +808,10 @@ export default function AdminPage() {
                 {/* Status Filter Pills */}
                 <div className="grid grid-cols-4 gap-2">
                   {[
-                    { key: "ALL", label: "All", count: modelStats.total, active: "bg-[#0B2265] text-white border-[#0B2265]", idle: "bg-white text-[#0B2265] border-blue-100" },
-                    { key: "in_stock", label: "In Stock", count: modelStats.inStock, active: "bg-emerald-600 text-white border-emerald-600", idle: "bg-white text-emerald-700 border-blue-100" },
-                    { key: "low_stock", label: "Low", count: modelStats.lowStock, active: "bg-amber-500 text-white border-amber-500", idle: "bg-white text-amber-600 border-blue-100" },
-                    { key: "out_of_stock", label: "Out", count: modelStats.outOfStock, active: "bg-[#E31E24] text-white border-[#E31E24]", idle: "bg-white text-[#E31E24] border-blue-100" },
+                    { key: "ALL", label: "All", count: modelStats.total, active: "bg-[#090E1A] text-white border-[#090E1A]", idle: "bg-white text-[#090E1A] border-slate-200" },
+                    { key: "in_stock", label: "In Stock", count: modelStats.inStock, active: "bg-emerald-600 text-white border-emerald-600", idle: "bg-white text-emerald-700 border-slate-200" },
+                    { key: "low_stock", label: "Low", count: modelStats.lowStock, active: "bg-amber-500 text-white border-amber-500", idle: "bg-white text-amber-600 border-slate-200" },
+                    { key: "out_of_stock", label: "Out", count: modelStats.outOfStock, active: "bg-[#E31E24] text-white border-[#E31E24]", idle: "bg-white text-[#E31E24] border-slate-200" },
                   ].map((pill) => (
                     <motion.button
                       key={pill.key}
@@ -841,8 +841,8 @@ export default function AdminPage() {
                         setSearch(e.target.value);
                         setVisibleLimit(50);
                       }}
-                      placeholder={`Search ${selectedModel} by Part No. or Part Description...`}
-                      className="w-full rounded-xl border border-blue-100 bg-white pl-10 pr-4 py-2.5 text-sm text-[#06133A] shadow-2xs outline-none focus:border-[#0B2265] focus:ring-4 focus:ring-blue-900/10 transition-all"
+                      placeholder={`Search ${selectedModel} by Part No. or Description...`}
+                      className="w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 py-2.5 text-sm text-[#090E1A] shadow-2xs outline-none focus:border-[#090E1A] focus:ring-4 focus:ring-slate-900/5 transition-all"
                     />
                   </div>
 
@@ -854,7 +854,7 @@ export default function AdminPage() {
                         setAssemblyFilter(e.target.value);
                         setVisibleLimit(50);
                       }}
-                      className="w-full rounded-xl border border-blue-100 bg-white pl-10 pr-4 py-2.5 text-sm font-medium text-slate-700 shadow-2xs outline-none focus:border-[#0B2265]"
+                      className="w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 py-2.5 text-sm font-medium text-slate-700 shadow-2xs outline-none focus:border-[#090E1A]"
                     >
                       <option value="ALL">All Assemblies ({assemblies.length})</option>
                       {assemblies.map((asm) => (
@@ -867,14 +867,14 @@ export default function AdminPage() {
                 </div>
 
                 {loadingParts ? (
-                  <div className="rounded-2xl border border-blue-100 bg-white py-14 text-center text-slate-500">
-                    <Loader2 className="mx-auto h-6 w-6 animate-spin text-[#0B2265] mb-2" />
+                  <div className="rounded-2xl border border-slate-200 bg-white py-14 text-center text-slate-500">
+                    <Loader2 className="mx-auto h-6 w-6 animate-spin text-[#090E1A] mb-2" />
                     <p className="text-xs font-medium">Loading {selectedModel} parts...</p>
                   </div>
                 ) : filteredParts.length === 0 ? (
-                  <div className="rounded-2xl border border-dashed border-slate-300 bg-white py-14 text-center px-4">
+                  <div className="rounded-2xl border border-dashed border-slate-200 bg-white py-14 text-center px-4">
                     <Package className="mx-auto h-9 w-9 text-slate-300 mb-2.5" />
-                    <p className="text-sm font-bold text-[#0B2265]">No parts match your search</p>
+                    <p className="text-sm font-bold text-[#090E1A]">No parts match your search</p>
                   </div>
                 ) : (
                   <>
@@ -886,17 +886,17 @@ export default function AdminPage() {
                         return (
                           <div
                             key={part.id}
-                            className="rounded-2xl border border-blue-100 bg-white p-4 space-y-3 shadow-2xs"
+                            className="rounded-2xl border border-slate-200/90 bg-white p-4 space-y-3 shadow-xs"
                           >
                             <div className="flex items-start justify-between gap-2">
                               <div>
-                                <span className="inline-block rounded-md bg-blue-50 px-2 py-0.5 font-mono text-[11px] font-bold text-[#0B2265]">
+                                <span className="inline-block rounded-md bg-slate-100 px-2 py-0.5 font-mono text-[11px] font-bold text-[#090E1A]">
                                   {part.part_no}
                                 </span>
-                                <h3 className="mt-1.5 text-sm font-extrabold text-[#06133A] leading-snug">
+                                <h3 className="mt-1.5 text-sm font-black text-[#090E1A] leading-snug">
                                   {part.name}
                                 </h3>
-                                <p className="text-[11px] text-slate-500 mt-0.5">
+                                <p className="text-[11px] text-slate-500 font-medium mt-0.5">
                                   {part.vehicle_model} &bull; {part.assembly}
                                 </p>
                               </div>
@@ -928,7 +928,7 @@ export default function AdminPage() {
                                   whileTap={{ scale: 0.88 }}
                                   disabled={isBusy || part.stock_qty <= 0}
                                   onClick={() => adjustStock(part, -1)}
-                                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#06133A] active:bg-red-100 disabled:opacity-40"
+                                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#090E1A] active:bg-red-100 disabled:opacity-40"
                                   aria-label="Decrease stock"
                                 >
                                   <Minus className="h-4 w-4" />
@@ -936,9 +936,9 @@ export default function AdminPage() {
                                 <motion.span
                                   key={part.stock_qty}
                                   initial={{ scale: 1.25, color: "#E31E24" }}
-                                  animate={{ scale: 1, color: "#0B2265" }}
+                                  animate={{ scale: 1, color: "#090E1A" }}
                                   transition={{ duration: 0.2 }}
-                                  className="w-10 text-center text-lg font-extrabold"
+                                  className="w-10 text-center text-lg font-black"
                                 >
                                   {part.stock_qty}
                                 </motion.span>
@@ -946,7 +946,7 @@ export default function AdminPage() {
                                   whileTap={{ scale: 0.88 }}
                                   disabled={isBusy}
                                   onClick={() => adjustStock(part, 1)}
-                                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#06133A] active:bg-emerald-100 disabled:opacity-40"
+                                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-[#090E1A] active:bg-emerald-100 disabled:opacity-40"
                                   aria-label="Increase stock"
                                 >
                                   <Plus className="h-4 w-4" />
@@ -956,7 +956,7 @@ export default function AdminPage() {
                               <div className="flex items-center gap-1.5">
                                 <button
                                   onClick={() => openEditModal(part)}
-                                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-[#0B2265] active:bg-blue-50"
+                                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-[#090E1A] active:bg-slate-100"
                                   aria-label="Edit part"
                                 >
                                   <Edit3 className="h-4 w-4" />
@@ -976,11 +976,11 @@ export default function AdminPage() {
                     </div>
 
                     {/* DESKTOP TABLE VIEW (md+) — NO MRP */}
-                    <div className="hidden md:block rounded-2xl border border-blue-100 bg-white overflow-hidden shadow-xs">
+                    <div className="hidden md:block rounded-2xl border border-slate-200/90 bg-white overflow-hidden shadow-xs">
                       <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                           <thead>
-                            <tr className="border-b border-blue-100 bg-blue-50/50 text-[11px] font-bold uppercase tracking-wider text-[#0B2265]/80">
+                            <tr className="border-b border-slate-200 bg-slate-50/80 text-[11px] font-bold uppercase tracking-wider text-slate-500">
                               <th className="py-3.5 px-4">Part No.</th>
                               <th className="py-3.5 px-4">Part Description</th>
                               <th className="py-3.5 px-4">TVS Model</th>
@@ -994,17 +994,17 @@ export default function AdminPage() {
                               const status = getStockStatus(part);
                               const isBusy = busyPartId === part.id;
                               return (
-                                <tr key={part.id} className="hover:bg-blue-50/35 transition-colors">
-                                  <td className="py-3.5 px-4 font-mono text-xs font-bold text-[#0B2265] whitespace-nowrap">
+                                <tr key={part.id} className="hover:bg-slate-50/60 transition-colors">
+                                  <td className="py-3.5 px-4 font-mono text-xs font-bold text-[#090E1A] whitespace-nowrap">
                                     {part.part_no}
                                   </td>
                                   <td className="py-3.5 px-4">
-                                    <p className="font-bold text-[#06133A]">{part.name}</p>
-                                    <p className="text-[11px] text-slate-500">
+                                    <p className="font-bold text-[#090E1A]">{part.name}</p>
+                                    <p className="text-[11px] text-slate-500 font-medium">
                                       {part.assembly} &bull; {part.fig_no}
                                     </p>
                                   </td>
-                                  <td className="py-3.5 px-4 text-xs font-semibold text-slate-700 whitespace-nowrap">
+                                  <td className="py-3.5 px-4 text-xs font-medium text-slate-700 whitespace-nowrap">
                                     {part.vehicle_model}
                                   </td>
                                   <td className="py-3.5 px-4 whitespace-nowrap">
@@ -1021,9 +1021,9 @@ export default function AdminPage() {
                                       <motion.span
                                         key={part.stock_qty}
                                         initial={{ scale: 1.25, color: "#E31E24" }}
-                                        animate={{ scale: 1, color: "#0B2265" }}
+                                        animate={{ scale: 1, color: "#090E1A" }}
                                         transition={{ duration: 0.2 }}
-                                        className="w-10 text-center text-sm font-extrabold"
+                                        className="w-10 text-center text-sm font-black"
                                       >
                                         {part.stock_qty}
                                       </motion.span>
@@ -1062,7 +1062,7 @@ export default function AdminPage() {
                                     <div className="inline-flex items-center gap-1">
                                       <button
                                         onClick={() => openEditModal(part)}
-                                        className="rounded-lg p-2 text-slate-500 hover:bg-blue-50 hover:text-[#0B2265] transition-colors"
+                                        className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-[#090E1A] transition-colors"
                                         title="Edit part"
                                       >
                                         <Edit3 className="h-4 w-4" />
@@ -1088,7 +1088,7 @@ export default function AdminPage() {
                       <div className="text-center pt-1">
                         <button
                           onClick={() => setVisibleLimit((v) => v + 50)}
-                          className="rounded-xl border border-blue-200 bg-white px-5 py-2.5 text-xs font-bold text-[#0B2265] hover:bg-blue-50 transition-colors"
+                          className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-[#090E1A] hover:bg-slate-50 transition-colors shadow-2xs"
                         >
                           Load More ({filteredParts.length - visibleLimit} remaining)
                         </button>
@@ -1112,12 +1112,12 @@ export default function AdminPage() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl border border-blue-100 bg-white overflow-hidden shadow-2xs"
+            className="rounded-2xl border border-slate-200/90 bg-white overflow-hidden shadow-xs"
           >
             {enquiries.length === 0 ? (
               <div className="py-14 text-center text-slate-500 px-4">
                 <MessageSquare className="mx-auto h-9 w-9 text-slate-300 mb-2.5" />
-                <p className="text-sm font-bold text-[#0B2265]">No enquiries yet</p>
+                <p className="text-sm font-bold text-[#090E1A]">No enquiries yet</p>
                 <p className="text-xs mt-1">
                   Customer part requests and test ride bookings will appear here.
                 </p>
@@ -1131,10 +1131,10 @@ export default function AdminPage() {
                   >
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase text-[#0B2265]">
+                        <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase text-[#090E1A]">
                           {enq.enquiry_type.replace("_", " ")}
                         </span>
-                        <span className="text-sm font-extrabold text-[#06133A]">
+                        <span className="text-sm font-extrabold text-[#090E1A]">
                           {enq.item_name}
                         </span>
                       </div>
@@ -1160,7 +1160,7 @@ export default function AdminPage() {
                                 ? "bg-emerald-600 text-white border-emerald-600"
                                 : st === "contacted"
                                 ? "bg-amber-500 text-white border-amber-500"
-                                : "bg-[#0B2265] text-white border-[#0B2265]"
+                                : "bg-[#090E1A] text-white border-[#090E1A]"
                               : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
                           }`}
                         >
@@ -1175,11 +1175,11 @@ export default function AdminPage() {
           </motion.div>
         )}
         {/* Admin Footer with Developer Signature */}
-        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 border-t border-blue-100">
+        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 border-t border-slate-200">
           <p>&copy; {new Date().getFullYear()} Maruti TVS &bull; Authorized Sub Dealer</p>
           <div className="flex items-center gap-1.5">
             <span>Website Designed &amp; Developed by</span>
-            <span className="font-bold text-[#0B2265]">Astha Web-Developer</span>
+            <span className="font-bold text-[#090E1A]">Astha Web-Developer</span>
           </div>
         </div>
       </main>
@@ -1191,14 +1191,14 @@ export default function AdminPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-[#06133A]/65 backdrop-blur-sm p-0 sm:p-4"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-[#090E1A]/60 backdrop-blur-sm p-0 sm:p-4"
           >
             <motion.div
               initial={{ y: 60, opacity: 0, scale: 0.98 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 60, opacity: 0, scale: 0.98 }}
               transition={{ type: "spring", stiffness: 360, damping: 30 }}
-              className="relative w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl bg-white p-6 shadow-2xl border border-blue-100 max-h-[90vh] overflow-y-auto"
+              className="relative w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl bg-white p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setFormOpen(false)}
@@ -1207,7 +1207,7 @@ export default function AdminPage() {
                 <X className="h-5 w-5" />
               </button>
 
-              <h2 className="text-base font-extrabold text-[#0B2265] mb-4">
+              <h2 className="text-base font-black text-[#090E1A] mb-4">
                 {editingPart ? "Edit TVS Spare Part" : "Add TVS Spare Part"}
               </h2>
 
@@ -1222,7 +1222,7 @@ export default function AdminPage() {
                       value={form.part_no}
                       onChange={(e) => setForm({ ...form, part_no: e.target.value })}
                       placeholder="e.g. K3080820"
-                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-mono outline-none focus:border-[#0B2265]"
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-mono outline-none focus:border-[#090E1A]"
                     />
                   </div>
                   <div>
@@ -1234,7 +1234,7 @@ export default function AdminPage() {
                       value={form.vehicle_model}
                       onChange={(e) => setForm({ ...form, vehicle_model: e.target.value })}
                       placeholder="TVS Scooty Streak"
-                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#0B2265]"
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#090E1A]"
                     />
                   </div>
                 </div>
@@ -1248,7 +1248,7 @@ export default function AdminPage() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="e.g. V - BELT DRIVE"
-                    className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#0B2265]"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#090E1A]"
                   />
                 </div>
 
@@ -1261,7 +1261,7 @@ export default function AdminPage() {
                     value={form.assembly}
                     onChange={(e) => setForm({ ...form, assembly: e.target.value })}
                     placeholder="e.g. Clutch & Variamatic Assembly"
-                    className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#0B2265]"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#090E1A]"
                   />
                 </div>
 
@@ -1276,7 +1276,7 @@ export default function AdminPage() {
                       required
                       value={form.stock_qty}
                       onChange={(e) => setForm({ ...form, stock_qty: Number(e.target.value) })}
-                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-bold outline-none focus:border-[#0B2265]"
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-bold outline-none focus:border-[#090E1A]"
                     />
                   </div>
                   <div>
@@ -1289,7 +1289,7 @@ export default function AdminPage() {
                       required
                       value={form.min_stock}
                       onChange={(e) => setForm({ ...form, min_stock: Number(e.target.value) })}
-                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#0B2265]"
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#090E1A]"
                     />
                   </div>
                 </div>
